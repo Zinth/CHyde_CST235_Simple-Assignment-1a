@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--
+ * @author Chris Hyde
+ * @date August 8, 2018
+ * @class CST-235
+ * @instructor Dr. Toure
+ * 
+ * @about: This is the landing page for the Simple Video Size Calculator
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head> 
+        <title>Simple Video Calculator</title>
+    </h:head>
+    <h:body>
+        <h:form> 
+            <h1>--Simple Video Calculator--</h1>
+            <p></p>
+            <h3>What is the quality of the video?</h3> 
+            
+            <h:selectOneRadio value = "#{videoBean.quality}"> 
+                <f:selectItem itemValue = "false" itemLabel = "720p" /> 
+                <f:selectItem itemValue = "true" itemLabel = "1080p" />
+               </h:selectOneRadio> 
+                              
+            <h3>How long is your video in seconds?</h3> 
+            <h5>*Max of 36000 seconds (10 Hours)*</h5>
+            <h:inputText id="videoLength" 
+                   title="My video lenth in seconds is: " 
+                   value="#{videoBean.videoLength}" 
+                   required="true"
+                   requiredMessage="Error: A video length in seconds is required." 
+                   maxlength="50">
+                <f:validateLongRange minimum="#{videoBean.minimum}" maximum="#{videoBean.maximum}"/>
+            </h:inputText> 
+            <p></p> 
+            <h5>**This calculator is based on 30 fps and 8 bit color-depth.**</h5>
+            <h:commandButton id="submit" 
+                             value="Calculate" 
+                             action="results"/> 
+            <h6> Web Application By: Chris Hyde </h6>
+        </h:form>
+    </h:body>
+</html>
+

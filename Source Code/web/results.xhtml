@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--
+ * @author Chris Hyde
+ * @date August 8, 2018
+ * @class CST-235
+ * @instructor Dr. Toure
+ * 
+ * @about: This is the page that shows the results for the Simple Video Size Calculator
+-->
+
+<html lang="en" 
+      xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <title>Simple Video Size Calculator Results</title>
+    </head>
+    <body>
+        <h:form>
+            <h1>--Simple Video Calculator Results--</h1>
+            <h3>
+                <h:outputText id="result" value="#{videoBean.result}"/>
+            </h3>
+            <h5>**This is the uncompressed file size.**</h5>
+            <h:commandButton id="back" value="Back" action="calculator"/>
+        </h:form>
+    </body>
+</html>
